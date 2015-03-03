@@ -1,0 +1,81 @@
+
+.row
+{
+	margin: 5px;
+	padding: 5px;
+}
+
+.col
+{
+	margin: 5px;
+	padding: 5px;
+}
+
+/*
+#row_superior
+{
+	margin: 5px;
+}
+*/
+
+#row_medio
+{
+	box-shadow: 1px 1px 1px #2e2e2e;
+	background-color: #E7E7E7;
+}
+
+#column1_row_medio
+{
+	box-shadow: 1px 1px 2px #000000;
+	background-color: #FFFFFF;
+	/*padding: 5px  !important;*/
+}
+#fecha{
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+#column3_row_medio
+{
+	box-shadow: 1px 1px 2px #000000;
+	background-color: #FFFFFF;
+	height: 100% !important;
+	/*padding: 5px;*/
+}
+
+#articulo
+{
+	/*margin: 5px;
+	padding: 5px;*/
+	
+	/*background-color: #F4FD55;*/
+
+	background-image: url("../images/block.jpg");
+	background-repeat: repeat-y;
+	background-size: 100%;
+	box-shadow: 1px 1px 2px #000000;
+	/*border-radius: 4px;*/
+	padding-left: 60px !important;
+}
+
+#calendario
+{
+	border-radius: 3px;
+	margin: 0px !important;
+}
+#row_foot
+{
+	border-radius: 3px;
+	background-color: #003472 !important;
+}
+
+#nota
+{
+	/*background-image: url("nota.jpg");
+	background-size: contain;*/
+	background-color: #FFF53C;
+	/*-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;*/
+    -webkit-box-shadow: 0 0 5px 0 rgba(0,0,0,1.0);
+	box-shadow: 0 0 5px 0 rgba(0,0,0,1.0);
+}
