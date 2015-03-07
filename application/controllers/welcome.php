@@ -14,22 +14,21 @@ class Welcome extends CI_Controller {
 	{
 
 		if(empty($this->session->userdata('sNombreUsuario'))){
-			$newdata = array(
+			/*$newdata = array(
 			'sNombreUsuario' => 'unifrancouni',
 			'email' => 'unifrancouni@gmail.com'
 			);
 			$this->session->set_userdata($newdata);
-			echo 'Logueado !';
+			echo 'Logueado !';*/
 			//Aca iria el login
+
+			redirect('http://localhost/STDUNIATD/index.php/login');
 
 		}
 		else
 		{
 			$user_data = $this->session->userdata('sNombreUsuario');
 			echo 'Sesion iniciada como: '.$user_data.'<br>';
-
-			//Aca cargaria la pagina principal
-
 		}
 
 		//$data = array('Registros'=>$this->users->getUsers());
