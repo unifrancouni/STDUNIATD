@@ -22,13 +22,15 @@ class Welcome extends CI_Controller {
 			echo 'Logueado !';*/
 			//Aca iria el login
 
-			redirect('http://localhost/STDUNIATD/index.php/login');
+			redirect(base_url().'index.php/boxlogin');
 
 		}
 		else
 		{
-			$user_data = $this->session->userdata('sNombreUsuario');
-			echo 'Sesion iniciada como: '.$user_data.'<br>';
+			//$user_data = $this->session->userdata('sNombreUsuario');
+			//echo 'Sesion iniciada como: '.$user_data.'<br>';
+
+			redirect(base_url().'index.php/noticias');
 		}
 
 		//$data = array('Registros'=>$this->users->getUsers());
