@@ -53,7 +53,6 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?php echo base_url(); ?>styles/admin/dist/js/pages/dashboard.js" type="text/javascript"></script>
 
-
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>styles/admin/dist/js/demo.js" type="text/javascript"></script>
 */?>
