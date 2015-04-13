@@ -32,6 +32,60 @@
 			$res = $query->result();
 			return $res[0]->sClave;
 		}
+
+        //Devuelve 1=SuperUsuario, 2=Administrador, 3=UsuarioComun, 4=Invitado
+        public function obtenerNivelCargo($x)
+        {
+            $consulta = "select CONVERT( stbvalorcatalogo.scodigointerno, UNSIGNED) as nivel
+                from ssgcuenta inner join ssgusuario on ssgusuario.nssgcuentaid=ssgcuenta.nssgcuentaid
+                inner join stbvalorcatalogo on stbvalorcatalogo.nstbvalorcatalogoid=ssgusuario.nstbcargopersonaid
+                where ssgcuenta.snombreusuario='$x'";
+            $query = $this->db->query($consulta);
+            $res = $query->result();
+            return $res[0]->nivel;
+        }
+
+        //Obtiene nombre de Imagen de Perfil del usuario
+        function obtenerImagen($x) {
+            $consulta = "select sDireccionImagenPerfil
+                from ssgcuenta inner join ssgusuario on ssgusuario.nssgcuentaid=ssgcuenta.nssgcuentaid
+                where ssgcuenta.snombreusuario='$x'";
+            $query = $this->db->query($consulta);
+            $res = $query->result();
+            return $res[0]->sDireccionImagenPerfil;
+        }
+
+        //Obtiene el nombre del usuario
+        public function obtenerNombreUsuario($x)
+        {
+            $consulta = "select concat(sNombre,' ',sApellido1) as sNombreUsuario
+                from ssgcuenta inner join ssgusuario on ssgusuario.nssgcuentaid=ssgcuenta.nssgcuentaid
+                inner join stbpersona on stbpersona.nstbpersonaid=ssgusuario.nstbpersonaid
+                where ssgcuenta.snombreusuario='$x'";
+            $query = $this->db->query($consulta);
+            $res = $query->result();
+            return $res[0]->sNombreUsuario;
+        }
+
+        //Obtiene la cantidad de afiliados (ssgcuenta)
+        public function obtenerCantidadAfiliados()
+        {
+            $consulta = "select count(nSsgCuentaID) as cantidad from ssgcuenta";
+            $query = $this->db->query($consulta);
+            $res = $query->result();
+            return $res[0]->cantidad;
+        }
+
+        //Corrige la URI antes de entrar en un controller
+        public function CorregirURI()
+        {
+            $count=0;
+            $newURI = str_replace('index.php/','',$_SERVER['REQUEST_URI'],$count);
+            if ($count>0)
+            {
+                redirect('http://'.$_SERVER['HTTP_HOST'].$newURI);
+            }
+        }
 	}
 
 ?>

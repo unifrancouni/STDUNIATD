@@ -4,17 +4,18 @@
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
 		<title>STD-UNI-ATD</title>
-    <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico">
+    <link rel="shortcut icon" href="<?php echo base_url(); ?>/images/favicon.ico">
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="<?php echo base_url(); ?>css/bootstrap-min.css" rel="stylesheet">
+		
+    <link href="<?php echo base_url(); ?>/css/bootstrap-min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 
-    <script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
-		<script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url(); ?>js/scripts.js"></script>
+    <script src="<?php echo base_url(); ?>/js/jquery.min.js"></script>
+		<script src="<?php echo base_url(); ?>/js/bootstrap-min.js"></script>
+		<!-- <script src="<?php echo base_url(); ?>js/scripts.js"></script> -->
 
         <script>
 
@@ -42,7 +43,7 @@
         
         
 
-		<link href="<?php echo base_url(); ?>css/styles.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>/css/styles.css" rel="stylesheet">
 
 	</head>
 	<body>
@@ -93,7 +94,7 @@
       <div class="col col-sm-6">
           <div class="col col-sm-6">
         <div class="well pull-left">
-          <img src="<?php echo base_url(); ?>images/logostd_640_480.png" class="center-block img-circle">      
+          <img src="<?php echo base_url(); ?>/images/logostd_640_480.png" class="center-block img-circle">      
         </div>
       </div>
         <h1><a href="#" title="scroll down for your viewing pleasure">STD-UNI-ATD</a>
@@ -101,7 +102,7 @@
       </div>
       <div class="col col-sm-6">
         <div class="well pull-right">
-          <img src="<?php echo base_url(); ?>images/uni_640_480.jpg" class="center-block img-rounded">      
+          <img src="<?php echo base_url(); ?>/images/uni_640_480.jpg" class="center-block img-rounded">      
         </div>
       </div>
     </div>

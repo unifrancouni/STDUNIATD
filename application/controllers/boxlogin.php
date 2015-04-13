@@ -11,13 +11,17 @@ class Boxlogin extends CI_Controller {
 
 	public function index()
 	{
-		if(empty($this->session->userdata('sNombreUsuario'))){
+        $this->users->CorregirURI();
+
+		$s = $this->session->userdata('sNombreUsuario');
+		if(empty($s)){
 			$this->load->view('invitado/boxlogin');
 		}
 		else
 		{
-			redirect(base_url().'index.php/noticias');
+			redirect(base_url().'dashboard');
 		}
+
 	}
 
 }

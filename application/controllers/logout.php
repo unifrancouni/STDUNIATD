@@ -11,8 +11,10 @@ class Logout extends CI_Controller {
 
 	public function index()
 	{
-		$this->session->sess_destroy();
-		redirect('http://localhost/STDUNIATD/index.php/boxlogin');
+        $verificado = $this->input->post('valor');
+        if ($verificado=='1')
+            $this->session->sess_destroy();
+        redirect(base_url().'boxlogin');
 	}
 
 }

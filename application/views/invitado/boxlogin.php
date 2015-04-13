@@ -3,12 +3,12 @@
   <head>
   <meta charset="utf-8">
   <title>STD-UNI-ATD</title>
-  <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico">
+  <link rel="shortcut icon" href="<?php echo base_url(); ?>/images/favicon.ico">
   <meta name="viewport" content="Width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap-min.css">
-  <script src="<?php echo base_url(); ?>js/jquery.min.js"></script>
-  <script src="<?php echo base_url(); ?>js/bootstrap-min.js"></script>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/css/bootstrap-min.css">
+  <script src="<?php echo base_url(); ?>/js/jquery.min.js"></script>
+  <script src="<?php echo base_url(); ?>/js/bootstrap-min.js"></script>
 </head>
 
 
@@ -16,10 +16,10 @@
 <div class="col-md-6" style="background-color: #e7e7e7; box-shadow: 1px 1px 2px #000000; margin-top:100px; margin-bottom:100px; margin-left:300px; margin-right:300px; min-width: 200px; padding-top:10px; border-radius: 20px;">
 <div class="row">
   <div class="col-md-6">
-    <img src="<?php echo base_url(); ?>images/logostd_640_480.png" class="img-circle img-responsive" />
+    <img src="<?php echo base_url(); ?>/images/logostd_640_480.png" class="img-circle img-responsive" />
   </div>
   <div class="col-md-6">
-    <img src="<?php echo base_url(); ?>images/uni_640_480.jpg" class="img-rounded img-responsive" style="margin-top: 10px;float: right"/>
+    <img src="<?php echo base_url(); ?>/images/uni_640_480.jpg" class="img-rounded img-responsive" style="margin-top: 10px;float: right"/>
   </div>
 </div>
 <div class="row">
@@ -32,11 +32,11 @@
         <div style="padding: 5px;" id="form-olvidado">
           <!-- <form accept-charset="UTF-8" role="form" id="login-form" method="post"> -->
           <?php echo validation_errors(); ?>
-          <?php echo form_open('login/user'); ?>
+          <?php echo form_open('login/user/'); ?>
             <fieldset>
               <div class="form-group input-group">
                 <span class="input-group-addon">
-                  @
+                    @
                 </span>
                 <input class="form-control" placeholder="Email" name="email" type="text" required="" autofocus="">
               </div>
@@ -54,7 +54,7 @@
                 </p>
               </div>
             </fieldset>
-          <!-- </form> -->
+          </form>
         </div>
       </div>
 	 </div>

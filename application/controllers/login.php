@@ -6,6 +6,7 @@ class Login extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('users');
+        $this->load->model('visitas');
 		$this->load->library('Session');
 
 	}
@@ -26,10 +27,10 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Email', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
 
-		//$usuario = $this->input->post('email');
-		//$passwd = $this->input>post('password');
-		$usuario = $_POST['email'];
-		$passwd = $_POST['password'];
+		$usuario = $this->input->post('email');
+		$passwd = $this->input->post('password');
+		//$usuario = $_POST['email'];
+		//$passwd = $_POST['password'];
 
 		if ($this->form_validation->run() === FALSE)
 		{
@@ -43,16 +44,17 @@ class Login extends CI_Controller {
 									'sNombreUsuario' => $usuario
 				);
 				$this->session->set_userdata($newdata);
-				redirect(base_url().'index.php/noticias');
+                $this->visitas->nuevaVisita($usuario);
+				redirect(base_url().'dashboard');
 			}
 			else 
-				redirect(base_url().'index.php/boxlogin');
+				redirect(base_url().'boxlogin');
 		}
 	}
 
 	public function email()
 	{
-		$this->load->library('form_validation');
+		/*$this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('email-recupera', 'Email', 'required');
 
@@ -66,6 +68,6 @@ class Login extends CI_Controller {
 				redirect(base_url().'index.php/noticias');
 			else
 				redirect(base_url().'index.php/boxlogin');
-		}
+		}*/
 	}
 }
