@@ -55,7 +55,7 @@ class Login extends CI_Controller {
 	public function email()
 	{
 		/*$this->load->library('form_validation');
-		
+
 		$this->form_validation->set_rules('email-recupera', 'Email', 'required');
 
 		if ($this->form_validation->run() === FALSE)

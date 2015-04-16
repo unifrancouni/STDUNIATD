@@ -83,7 +83,7 @@
                 <div class="box box-primary">
                     <div class="box-header">
                         <i class="fa fa-bar-chart-o"></i>
-                        <h3 class="box-title">Bar Chart</h3>
+                        <h3 class="box-title">Visitas por mes</h3>
                     </div>
                     <div class="box-body">
                         <div id="bar-chart" style="height: 300px;"></div>

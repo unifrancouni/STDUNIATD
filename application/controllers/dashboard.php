@@ -14,27 +14,26 @@ class Dashboard extends CI_Controller {
     public function index()
     {
         $this->users->CorregirURI();
-
         $s = $this->session->userdata('sNombreUsuario');
+        $data=array();
+        $data['imagen']=$this->obtenerImagenDefinitiva();
+        $data['nombre_usuario']=$this->users->obtenerNombreUsuario($this->session->userdata('sNombreUsuario'));
+
         if(!empty($s)){
-            if($this->users->obtenerNivelCargo($s)==1)
+            $nivel_cargo=$this->users->obtenerNivelCargo($s);
+            if($nivel_cargo==1)
             {
-                $data=array();
-
-                $data['imagen']=$this->obtenerImagenDefinitiva();
-
-                $data['nombre_usuario']=$this->users->obtenerNombreUsuario($this->session->userdata('sNombreUsuario'));
                 $data['cant_afiliados']=$this->users->obtenerCantidadAfiliados();
                 $data['cant_noticias']=$this->news->obtenerCantidadNoticias();
                 $data['cant_visitas']=$this->visitas->obtenerCantidadVisitasHoy();
 
-                $this->load->view('directivo/head', $data);
-                $this->load->view('directivo/cabecera_azul', $data);
-                $this->load->view('directivo/panel_izquierdo', $data);
+                $this->load->view('miembro/agremiado/head', $data);
+                $this->load->view('miembro/agremiado/cabecera_azul', $data);
+                $this->load->view('miembro/agremiado/panel_izquierdo', $data);
 
-                $this->load->view('directivo/cuerpo', $data);
+                $this->load->view('miembro/directivo/cuerpo', $data);
 
-                $this->load->view('directivo/pie', $data);
+                $this->load->view('miembro/agremiado/pie', $data);
             }
             else
             {

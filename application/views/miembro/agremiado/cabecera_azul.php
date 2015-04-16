@@ -69,7 +69,10 @@
                         <li class="footer"><a href="#">View all</a></li>
                     </ul>
                 </li>
-                <!-- Tasks: style can be found in dropdown.less -->
+
+
+                <!-- Tasks: style can be found in dropdown.less (Banderita) -->
+                <?php /*
                 <li class="dropdown tasks-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="fa fa-flag-o"></i>
@@ -100,7 +103,8 @@
                             <a href="#">View all tasks</a>
                         </li>
                     </ul>
-                </li>
+                </li> */?>
+
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -117,7 +121,7 @@
                             </p>
                         </li>
                         <!-- Menu Body -->
-                        <li class="user-body">
+                        <!--<li class="user-body">
                             <div class="col-xs-4 text-center">
                                 <a href="#">Followers</a>
                             </div>
@@ -127,16 +131,18 @@
                             <div class="col-xs-4 text-center">
                                 <a href="#">Friends</a>
                             </div>
-                        </li>
+                        </li> -->
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="#" class="btn btn-default btn-flat">Editar Perfil</a>
+                                <a href="#" class="btn btn-default btn-flat"><i class="fa fa-edit"></i> Editar Perfil</a>
                             </div>
                             <div class="pull-right">
-                                <?php echo form_open('logout/index/'); ?>
+                                <?php $attributes = array('id' => 'salir'); ?>
+                                <?php echo form_open('logout/index/', $attributes); ?>
                                 <input type="hidden" name="valor" value="1" />
-                                <input type="submit" class="btn btn-default btn-flat" value="Cerrar Sesión" />
+                                <!-- <input type="submit" class="btn btn-default btn-flat" value="Cerrar Sesión" /> -->
+                                <a href="#" class="btn btn-default btn-flat" onclick="javascript:document.forms['salir'].submit();"><i class="fa fa-sign-out"></i> Cerrar Sesión</a>
                                 </form>
                             </div>
                         </li>
