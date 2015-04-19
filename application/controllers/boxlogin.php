@@ -15,10 +15,11 @@ class Boxlogin extends CI_Controller {
 
 		$s = $this->session->userdata('sNombreUsuario');
 		if(empty($s)){
-			$this->load->view('invitado/boxlogin');
+			$this->load->view('invitado/login');
 		}
 		else
 		{
+            // if remember me then acces else not acces
 			redirect(base_url().'dashboard');
 		}
 

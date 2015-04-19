@@ -5,13 +5,13 @@
     <title>STD-UNI-ATD | Login</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
-    <link href="<?php echo base_url(); ?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>styles/admin/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- Font Awesome Icons -->
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
-    <link href="<?php echo base_url(); ?>/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>styles/admin/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
-    <link href="<?php echo base_url(); ?>/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url(); ?>styles/admin/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,14 +23,24 @@
   <body class="login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a href="#"><b>STD-UNI-ATD</b></a>
       </div><!-- /.login-logo -->
       <div class="login-box-body">
+        <div class="row">
+            <div class="col-xs-3">
+                <img src="<?php echo base_url(); ?>/images/logostd_640_480.png" class="img-circle img-responsive" />
+            </div>
+            <div class="col-xs-6">
+                <h3><b>STD-UNI-ATD</b></h3>
+            </div>
+            <div class="col-xs-3">
+                <img src="<?php echo base_url(); ?>/images/uni_640_480.jpg" class="img-responsive" style="margin-top: 20%" />
+            </div>
+        </div>
         <p class="login-box-msg">Entre para iniciar una sesión</p>
           <?php echo form_open('login/user/'); ?>
           <div class="form-group has-feedback">
             <input type="text" class="form-control" name="email" placeholder="Email"/>
-            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
             <input type="password" class="form-control" name="password" placeholder="Password"/>
@@ -58,17 +68,17 @@
         </div><!-- /.social-auth-links -->
 
         <a href="#">He olvidado mi contraseña</a><br>
-        <a href="register.html" class="text-center">Solicitar afiliación</a>
+        <a href="#" class="text-center">Solicitar afiliación</a>
 
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
 
     <!-- jQuery 2.1.3 -->
-    <script src="../../plugins/jQuery/jQuery-2.1.3.min.js"></script>
+    <script src="<?php echo base_url(); ?>styles/admin/plugins/jQuery/jQuery-2.1.3.min.js"></script>
     <!-- Bootstrap 3.3.2 JS -->
-    <script src="../../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>styles/admin/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- iCheck -->
-    <script src="../../plugins/iCheck/icheck.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>styles/admin/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
     <script>
       $(function () {
         $('input').iCheck({

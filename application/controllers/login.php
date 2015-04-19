@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 		{
-			$this->load->view('invitado/boxlogin');
+			$this->load->view('invitado/login');
 		}
 		else
 		{

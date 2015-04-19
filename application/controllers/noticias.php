@@ -17,7 +17,7 @@ class Noticias extends CI_Controller {
 		}
 		else
 		{
-			redirect('http://localhost/STDUNIATD/index.php/boxlogin');
+			redirect('boxlogin');
 		}
 	}
 
