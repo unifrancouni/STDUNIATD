@@ -4,9 +4,10 @@
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 2.0
+        <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2015 <a href="http://std-uni-atd.org.ni">
+            STD-UNI-ATD</a>.</strong> DESARROLLADO POR: FRANCO UGARTE, MARÍA ESTHER GRANADOS.
 </footer>
 
 <!-- jQuery 2.1.3 -->

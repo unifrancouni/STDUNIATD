@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Catalogos extends CI_Controller {
 
     public function __construct()
     {
         parent::__construct();
         $this->load->model('users');
-        $this->load->model('catalogos');
+        $this->load->model('catalogs');
         $this->load->library('Session');
     }
 
@@ -14,11 +14,33 @@ class Dashboard extends CI_Controller {
     {
         $this->users->CorregirURI();
         $s = $this->session->userdata('sNombreUsuario');
+        $data=array();
+        $data['imagen']=$this->obtenerImagenDefinitiva();
+        $data['nombre_usuario']=$this->users->obtenerNombreUsuario($this->session->userdata('sNombreUsuario'));
 
         if(!empty($s)){
+            $nivel_cargo=$this->users->obtenerNivelCargo($s);
+            if($nivel_cargo==1)
+            {
 
-            echo '';
+                //$data['cant_afiliados']=$this->users->obtenerCantidadAfiliados();
+                //$data['cant_noticias']=$this->news->obtenerCantidadNoticias();
+                //$data['cant_visitas']=$this->visitas->obtenerCantidadVisitasHoy();
 
+                $this->load->view('miembro/agremiado/generales/head', $data);
+                $this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
+                $this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
+
+                $this->load->view('miembro/directivo/catalogos/cuerpo', $data);
+
+                $this->load->view('miembro/agremiado/generales/pie', $data);
+            }
+            else
+            {
+                $this->session->set_flashdata('usuario_invalido',1);
+                $this->session->set_flashdata('usuario_mensaje','El administrador está dando mantenimiento.');
+                redirect(base_url().'boxlogin');
+            }
         }
         else
         {
@@ -27,6 +49,26 @@ class Dashboard extends CI_Controller {
             redirect(base_url().'boxlogin');
         }
 
+    }
+
+    private function obtenerImagenDefinitiva()
+    {
+        $imagen = $this->users->obtenerImagen($this->session->userdata('sNombreUsuario'));
+        if (!isset($imagen))
+        {
+            return 'user_default.jpg';
+        }
+        else
+        {
+            if(empty($imagen))
+            {
+                return 'user_default.jpg';
+            }
+            else
+            {
+                return $imagen;
+            }
+        }
     }
 
 

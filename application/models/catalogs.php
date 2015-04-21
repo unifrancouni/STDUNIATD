@@ -1,6 +1,6 @@
 <?php
 
-class Users extends CI_Model
+class Catalogs extends CI_Model
 {
     public function __construct()
     {

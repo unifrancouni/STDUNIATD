@@ -37,7 +37,9 @@ class Dashboard extends CI_Controller {
             }
             else
             {
-                echo 'Por el momento solo el administrador puede entrar.';
+                $this->session->set_flashdata('usuario_invalido',1);
+                $this->session->set_flashdata('usuario_mensaje','El administrador está dando mantenimiento.');
+                redirect(base_url().'boxlogin');
             }
         }
         else
