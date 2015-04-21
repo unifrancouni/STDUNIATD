@@ -38,7 +38,8 @@ class Login extends CI_Controller {
 
 		if ($this->form_validation->run() === FALSE)
 		{
-            $this->session->setSessionVar('usuario_invalido');
+            $this->session->set_flashdata('usuario_invalido',1);
+            $this->session->set_flashdata('usuario_mensaje','Debe llenar todos los campos.');
             redirect(base_url().'boxlogin');
 		}
 		else
@@ -54,7 +55,8 @@ class Login extends CI_Controller {
 			}
 			else
             {
-                $this->session->setSessionVar('usuario_invalido');
+                $this->session->set_flashdata('usuario_invalido',1);
+                $this->session->set_flashdata('usuario_mensaje','Usuario o contraseña están incorrectos.');
                 redirect(base_url().'boxlogin');
             }
 		}

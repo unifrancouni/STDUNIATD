@@ -42,6 +42,8 @@ class Dashboard extends CI_Controller {
         }
         else
         {
+            $this->session->set_flashdata('usuario_invalido',1);
+            $this->session->set_flashdata('usuario_mensaje','Sesión expirada.');
             redirect(base_url().'boxlogin');
         }
     }

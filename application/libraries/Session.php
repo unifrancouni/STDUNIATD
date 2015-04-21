@@ -354,22 +354,4 @@ class Session
         }
     }
 
-    public function setSessionVar($var)
-    {
-        $_SESSION[$var]=1;
-    }
-
-    public function getSessionVar($var)
-    {
-        if(isset($_SESSION[$var]))
-        {
-            return 1;
-        }
-        return 0;
-    }
-
-    public function unsetSessionVar($var)
-    {
-        unset($_SESSION[$var]);
-    }
 }

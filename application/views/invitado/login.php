@@ -71,11 +71,11 @@
         <a href="#">He olvidado mi contraseña</a><br>
         <a href="#" class="text-center">Solicitar afiliación</a>
 
-        <?php if(isset($usuario_invalido)) if($usuario_invalido==1) { ?>
+        <?php if($usuario_invalido==1) { ?>
             <div class="alert alert-danger alert-dismissable">
                 <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                <h4><i class="icon fa fa-ban"></i> Alert!</h4>
-                Su usuario o contraseña no son correctos.
+                <h4><i class="icon fa fa-ban"></i> ¡Error!</h4>
+                <?php echo $usuario_mensaje; ?>
             </div>
         <?php } ?>
 

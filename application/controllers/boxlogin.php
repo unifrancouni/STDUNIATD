@@ -13,15 +13,26 @@ class Boxlogin extends CI_Controller {
 	{
         $this->users->CorregirURI();
 
+        $existe=$this->session->flashdata('usuario_invalido');
+        if(!isset($existe))
+        {
+            $this->session->set_flashdata('usuario_invalido',0);
+            $this->session->set_flashdata('usuario_mensaje','');
+        }
+
+
 		$s = $this->session->userdata('sNombreUsuario');
 		if(empty($s)){
             $data=array();
 
-            $data['usuario_invalido'] = $this->session->getSessionVar('usuario_invalido');
+            $data['usuario_invalido'] = $this->session->flashdata('usuario_invalido');
+            $data['usuario_mensaje'] = $this->session->flashdata('usuario_mensaje');
 
 			$this->load->view('invitado/login', $data);
 
-            $this->session->unsetSessionVar('usuario_invalido');
+            $this->session->set_flashdata('usuario_invalido',0);
+            $this->session->set_flashdata('usuario_mensaje','');
+
 		}
 		else
 		{
