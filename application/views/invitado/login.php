@@ -24,7 +24,8 @@
     <div class="login-box">
       <div class="login-logo">
       </div><!-- /.login-logo -->
-      <div class="login-box-body">
+        <!-- login-box-body -->
+      <div class="box box-warning" style="padding: 10px;">
         <div class="row">
             <div class="col-xs-3">
                 <img src="<?php echo base_url(); ?>/images/logostd_640_480.png" class="img-circle img-responsive" />
@@ -39,11 +40,11 @@
         <p class="login-box-msg">Entre para iniciar una sesión</p>
           <?php echo form_open('login/user/'); ?>
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="email" placeholder="Email"/>
+            <input type="text" class="form-control" name="email" placeholder="Usuario"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" name="password" placeholder="Password"/>
+            <input type="password" class="form-control" name="password" placeholder="Contraseña"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -70,8 +71,20 @@
         <a href="#">He olvidado mi contraseña</a><br>
         <a href="#" class="text-center">Solicitar afiliación</a>
 
+        <?php if(isset($usuario_invalido)) if($usuario_invalido==1) { ?>
+            <div class="alert alert-danger alert-dismissable">
+                <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                Su usuario o contraseña no son correctos.
+            </div>
+        <?php } ?>
+
       </div><!-- /.login-box-body -->
     </div><!-- /.login-box -->
+
+
+
+
 
     <!-- jQuery 2.1.3 -->
     <script src="<?php echo base_url(); ?>styles/admin/plugins/jQuery/jQuery-2.1.3.min.js"></script>

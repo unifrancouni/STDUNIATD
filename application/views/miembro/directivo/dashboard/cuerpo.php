@@ -78,7 +78,7 @@
 
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6">
                 <!-- Bar chart -->
                 <div class="box box-primary">
                     <div class="box-header">

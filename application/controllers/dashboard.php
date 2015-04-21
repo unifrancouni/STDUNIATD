@@ -27,13 +27,13 @@ class Dashboard extends CI_Controller {
                 $data['cant_noticias']=$this->news->obtenerCantidadNoticias();
                 $data['cant_visitas']=$this->visitas->obtenerCantidadVisitasHoy();
 
-                $this->load->view('miembro/agremiado/head', $data);
-                $this->load->view('miembro/agremiado/cabecera_azul', $data);
-                $this->load->view('miembro/agremiado/panel_izquierdo', $data);
+                $this->load->view('miembro/agremiado/generales/head', $data);
+                $this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
+                $this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
 
-                $this->load->view('miembro/directivo/cuerpo', $data);
+                $this->load->view('miembro/directivo/dashboard/cuerpo', $data);
 
-                $this->load->view('miembro/agremiado/pie', $data);
+                $this->load->view('miembro/agremiado/generales/pie', $data);
             }
             else
             {

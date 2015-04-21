@@ -15,7 +15,13 @@ class Boxlogin extends CI_Controller {
 
 		$s = $this->session->userdata('sNombreUsuario');
 		if(empty($s)){
-			$this->load->view('invitado/login');
+            $data=array();
+
+            $data['usuario_invalido'] = $this->session->getSessionVar('usuario_invalido');
+
+			$this->load->view('invitado/login', $data);
+
+            $this->session->unsetSessionVar('usuario_invalido');
 		}
 		else
 		{
