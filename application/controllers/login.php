@@ -22,6 +22,8 @@ class Login extends CI_Controller {
 
 	public function user()
 	{
+        $data = array();
+
 		$this->load->library('form_validation');
 		
 		$this->form_validation->set_rules('email', 'Email', 'required');
@@ -32,9 +34,13 @@ class Login extends CI_Controller {
 		//$usuario = $_POST['email'];
 		//$passwd = $_POST['password'];
 
+
+
 		if ($this->form_validation->run() === FALSE)
 		{
-			$this->load->view('invitado/login');
+            $this->session->set_flashdata('usuario_invalido',1);
+            $this->session->set_flashdata('usuario_mensaje','Debe llenar todos los campos.');
+            redirect(base_url().'boxlogin');
 		}
 		else
 		{
@@ -47,8 +53,12 @@ class Login extends CI_Controller {
                 $this->visitas->nuevaVisita($usuario);
 				redirect(base_url().'dashboard');
 			}
-			else 
-				redirect(base_url().'boxlogin');
+			else
+            {
+                $this->session->set_flashdata('usuario_invalido',1);
+                $this->session->set_flashdata('usuario_mensaje','Usuario o contraseña están incorrectos.');
+                redirect(base_url().'boxlogin');
+            }
 		}
 	}
 
@@ -70,4 +80,6 @@ class Login extends CI_Controller {
 				redirect(base_url().'index.php/boxlogin');
 		}*/
 	}
+
+
 }

@@ -1,17 +1,17 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class Foro extends CI_Controller
-{
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('users');
-        $this->load->library('Session');
-    }
-
-    public function index()
-    {
-        echo 'Esto es el foro.';
-    }
-
-}
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Foro extends CI_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('users');
+        $this->load->library('Session');
+    }
+
+    public function index()
+    {
+        echo 'Esto es el foro.';
+    }
+
+}

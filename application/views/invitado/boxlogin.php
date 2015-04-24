@@ -36,7 +36,7 @@
             <fieldset>
               <div class="form-group input-group">
                 <span class="input-group-addon">
-                    @
+                  @
                 </span>
                 <input class="form-control" placeholder="Email" name="email" type="text" required="" autofocus="">
               </div>

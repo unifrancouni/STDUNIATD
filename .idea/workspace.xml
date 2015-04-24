@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba6e2f67-9a79-4b41-9b33-5450fba73a5e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/tests/models/UsersTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/boxlogin.php" afterPath="$PROJECT_DIR$/application/controllers/boxlogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/dashboard.php" afterPath="$PROJECT_DIR$/application/controllers/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/login.php" afterPath="$PROJECT_DIR$/application/controllers/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/invitado/login.php" afterPath="$PROJECT_DIR$/application/views/invitado/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/logout.php" afterPath="$PROJECT_DIR$/application/controllers/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/noticias.php" afterPath="$PROJECT_DIR$/application/controllers/noticias.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/tests/models/UsersTest.php" afterPath="$PROJECT_DIR$/application/tests/models/UsersTest.php" />
     </list>
     <ignored path="Gratuito.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,48 +26,7 @@
     <favorites_list name="Gratuito" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="UsersTest.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/tests/models/UsersTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.044854883" vertical-offset="0" max-vertical-offset="731">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-              <folding>
-                <marker date="1429423092574" expanded="true" signature="666:689" placeholder="select * fro..ssgcuenta..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.269231" vertical-offset="564" max-vertical-offset="1326">
-              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1632">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="14" selection-end-column="9" />
-              <folding>
-                <marker date="1428794422171" expanded="true" signature="191:214" placeholder="select * fro..ssgcuenta..." />
-                <marker date="1428794422171" expanded="true" signature="351:400" placeholder="select * fro..ssgcuenta..." />
-                <marker date="1428794422171" expanded="true" signature="627:681" placeholder="select sClav..ssgcuenta..." />
-                <marker date="1428794422171" expanded="true" signature="906:1242" placeholder="select CONVE..ssgcuenta..." />
-                <marker date="1428794422171" expanded="true" signature="1497:1681" placeholder="select sDire..ssgcuenta..." />
-                <marker date="1428794422171" expanded="true" signature="1958:2259" placeholder="select conca..ssgcuenta..." />
-                <marker date="1428794422171" expanded="true" signature="2545:2598" placeholder="select count..ssgcuenta..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
@@ -312,7 +264,7 @@
       <method />
     </configuration>
     <configuration default="false" name="UsersTest (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="UsersTest" file="$PROJECT_DIR$/application/tests/models/UsersTest.php" method="testgetUsers" scope="Method" />
+      <TestRunner class="UsersTest" file="$PROJECT_DIR$/application/tests/models/UsersTest.php" method="testFactorial" scope="Method" />
       <RunnerSettings RunnerId="PhpRunner" />
       <ConfigurationWrapper RunnerId="PhpRunner" />
       <method />
@@ -404,8 +356,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="776" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32713178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34573644" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -419,8 +371,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28640777" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32868218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28640777" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32868218" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31007752" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -797,9 +749,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/tests/models/UsersTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23011844" vertical-offset="0" max-vertical-offset="731">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+          <folding>
+            <marker date="1429425392081" expanded="true" signature="-1:-1" placeholder="select * fro..ssgcuenta..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.269231" vertical-offset="564" max-vertical-offset="1326">
+        <state vertical-scroll-proportion="0.62774956" vertical-offset="564" max-vertical-offset="1326">
           <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
           <folding />
         </state>
@@ -807,26 +769,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/users.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1632">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="14" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.25888324" vertical-offset="0" max-vertical-offset="1632">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding>
-            <marker date="1428794422171" expanded="true" signature="191:214" placeholder="select * fro..ssgcuenta..." />
-            <marker date="1428794422171" expanded="true" signature="351:400" placeholder="select * fro..ssgcuenta..." />
-            <marker date="1428794422171" expanded="true" signature="627:681" placeholder="select sClav..ssgcuenta..." />
-            <marker date="1428794422171" expanded="true" signature="906:1242" placeholder="select CONVE..ssgcuenta..." />
-            <marker date="1428794422171" expanded="true" signature="1497:1681" placeholder="select sDire..ssgcuenta..." />
-            <marker date="1428794422171" expanded="true" signature="1958:2259" placeholder="select conca..ssgcuenta..." />
-            <marker date="1428794422171" expanded="true" signature="2545:2598" placeholder="select count..ssgcuenta..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/tests/models/UsersTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.044854883" vertical-offset="0" max-vertical-offset="731">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <marker date="1429423092574" expanded="true" signature="666:689" placeholder="select * fro..ssgcuenta..." />
+            <marker date="1428794422171" expanded="true" signature="-1:-1" placeholder="select * fro..ssgcuenta..." />
+            <marker date="1428794422171" expanded="true" signature="-1:-1" placeholder="select * fro..ssgcuenta..." />
+            <marker date="1428794422171" expanded="true" signature="-1:-1" placeholder="select sClav..ssgcuenta..." />
+            <marker date="1428794422171" expanded="true" signature="-1:-1" placeholder="select CONVE..ssgcuenta..." />
+            <marker date="1428794422171" expanded="true" signature="-1:-1" placeholder="select sDire..ssgcuenta..." />
+            <marker date="1428794422171" expanded="true" signature="-1:-1" placeholder="select conca..ssgcuenta..." />
+            <marker date="1428794422171" expanded="true" signature="-1:-1" placeholder="select count..ssgcuenta..." />
           </folding>
         </state>
       </provider>
