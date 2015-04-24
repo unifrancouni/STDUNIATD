@@ -4,10 +4,9 @@
 
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 1.0
+        <b>Version</b> 2.0
     </div>
-    <strong>Copyright &copy; 2015 <a href="http://std-uni-atd.org.ni">
-            STD-UNI-ATD</a>.</strong> DESARROLLADO POR: FRANCO UGARTE, MARÍA ESTHER GRANADOS.
+    <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
 </footer>
 
 <!-- jQuery 2.1.3 -->
@@ -58,70 +57,6 @@
 <script src="<?php echo base_url(); ?>styles/admin/dist/js/demo.js" type="text/javascript"></script>
 */?>
 
-<!-- FLOT CHARTS -->
-<script src="<?php echo base_url(); ?>styles/admin/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="<?php echo base_url(); ?>styles/admin/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="<?php echo base_url(); ?>styles/admin/plugins/flot/jquery.flot.pie.min.js" type="text/javascript"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="<?php echo base_url(); ?>styles/admin/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
-
-
-<!-- FUNCION DEFINIDA POR MI -->
-<script type="text/javascript">
-    $(function(){
-        /*FUNCION DEFINIDA POR MI*/
-        "use strict";
-        var bar_data = {
-            data: [
-                  ["Ene", 1],
-                  ["Feb", 2],
-                  ["Mar", 3],
-                  ["Abr", 4],
-                  ["May", 5],
-                  ["Jun", 6],
-                  //["Jul",7],
-                  //["Ago",8],
-                  //["Sep",9],
-                  //["Oct",10],
-                  //["Nov",11],
-                  //["Dic",5]
-                  ],
-            color: "#3c8dbc"
-        };
-        $.plot("#bar-chart", [bar_data], {
-            grid: {
-                borderWidth: 1,
-                borderColor: "#f3f3f3",
-                tickColor: "#f3f3f3"
-            },
-            series: {
-                bars: {
-                    show: true,
-                    barWidth: 0.5,
-                    align: "center"
-                }
-            },
-            xaxis: {
-                mode: "categories",
-                tickLength: 0
-            }
-        });
-        /* END BAR CHART */
-    });
-</script>
-
-
-
-
-
-
-
-</body>
-
 <!-- ***************** -->
 <!-- Fin del Footer -->
 <!-- ***************** -->
-
-</html>

@@ -34,6 +34,8 @@ class Dashboard extends CI_Controller {
                 $this->load->view('miembro/directivo/dashboard/cuerpo', $data);
 
                 $this->load->view('miembro/agremiado/generales/pie', $data);
+                $this->load->view('miembro/directivo/dashboard/pie_dashboard', $data);
+                $this->load->view('miembro/agremiado/generales/final', $data);
             }
             else
             {

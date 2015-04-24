@@ -34,6 +34,8 @@ class Catalogos extends CI_Controller {
                 $this->load->view('miembro/directivo/catalogos/cuerpo', $data);
 
                 $this->load->view('miembro/agremiado/generales/pie', $data);
+                $this->load->view('miembro/directivo/catalogos/pie_catalogos', $data);
+                $this->load->view('miembro/agremiado/generales/final', $data);
             }
             else
             {
