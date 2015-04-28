@@ -33,16 +33,16 @@
         <ul class="sidebar-menu">
             <li class="header">COMANDOS</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="<?php echo base_url().'dashboard'; ?>">
+            <li id="li-dashboard" class="active"><a href="#" onclick="llamarDashboard()">
                     <i class="fa fa-dashboard"></i> <span>Panel de Control</span></a><</li>
             <li><a href="#"><i class="fa fa-comments"></i> <span>Foro</span></a></li>
             <li class="treeview">
                 <a href="#"><i class="fa fa-sitemap"></i> <span>Módulos</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url().'catalogos'; ?>"><i class="fa fa-book"></i> Catálogos Básicos</a></li>
-					<li><a href="<?php echo base_url().'planificacion'; ?>"><i class="fa fa-users"></i> Afiliación</a></li>
-                    <li><a href="<?php echo base_url().'planificacion'; ?>"><i class="fa fa-calendar"></i> Planificación</a></li>
-                    <li><a href="<?php echo base_url().'finanzas'; ?>"><i class="fa fa-usd"></i> Finanzas</a></li>
+                    <li id="li-catalogo"><a href="#" onclick="llamarCatalogos()" ><i class="fa fa-book"></i> Catálogos Básicos</a></li>
+					<li id="li-afilicaion"><a href="#" onclick="llamarAfiliacion()" ><i class="fa fa-users"></i> Afiliación</a></li>
+                    <li id="li-planificacion"><a href="#" onclick="llamarPlanificacion()" ><i class="fa fa-calendar"></i> Planificación</a></li>
+                    <li id="li-finanzas"><a href="#" onclick="llamarFinanzas()" ><i class="fa fa-usd"></i> Finanzas</a></li>
                 </ul>
         </ul><!-- /.sidebar-menu -->
 

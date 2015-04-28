@@ -27,15 +27,15 @@ class Catalogos extends CI_Controller {
                 //$data['cant_noticias']=$this->news->obtenerCantidadNoticias();
                 //$data['cant_visitas']=$this->visitas->obtenerCantidadVisitasHoy();
 
-                $this->load->view('miembro/agremiado/generales/head', $data);
-                $this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
-                $this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
+                //$this->load->view('miembro/agremiado/generales/head', $data);
+                //$this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
+                //$this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
 
                 $this->load->view('miembro/directivo/catalogos/cuerpo', $data);
 
-                $this->load->view('miembro/agremiado/generales/pie', $data);
-                $this->load->view('miembro/directivo/catalogos/pie_catalogos', $data);
-                $this->load->view('miembro/agremiado/generales/final', $data);
+                //$this->load->view('miembro/agremiado/generales/pie', $data);
+                //$this->load->view('miembro/directivo/catalogos/pie_catalogos', $data);
+                //$this->load->view('miembro/agremiado/generales/final', $data);
             }
             else
             {

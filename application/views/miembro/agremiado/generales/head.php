@@ -18,6 +18,13 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins 
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url(); ?>/styles/admin/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
+    <!-- DATA TABLES -->
+    <link href="<?php echo base_url(); ?>/styles/admin/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!--  PACE (Cargando...) -->
+    <link href="<?php echo base_url(); ?>/styles/admin/bootstrap/css/pace-theme-loading-bar.css" rel="stylesheet" type="text/css" />
+
+    <script data-pace-options='{ "ajax": true }' src='<?php echo base_url(); ?>/styles/admin/bootstrap/js/PACE.js'></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,6 +32,9 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+
+
+
 </head>
 <!-- ***************** -->
 <!-- Inicio del HTML -->

@@ -10,44 +10,5 @@
 
 <!-- FUNCION DEFINIDA POR MI -->
 <script type="text/javascript">
-    $(function(){
-        /*FUNCION DEFINIDA POR MI*/
-        "use strict";
-        var bar_data = {
-            data: [
-                ["Enero", 1],
-                ["Febrero", 2],
-                ["Marzo", 3],
-                ["Abril", 4],
-                ["Mayo", 5],
-                ["Junio", 6]
-                //["Julio",7],
-                //["Agosto",8],
-                //["Septiembre",9],
-                //["Octubre",10],
-                //["Noviembre",11],
-                //["Diciembre",5]
-            ],
-            color: "#3c8dbc"
-        };
-        $.plot("#bar-chart", [bar_data], {
-            grid: {
-                borderWidth: 1,
-                borderColor: "#f3f3f3",
-                tickColor: "#f3f3f3"
-            },
-            series: {
-                bars: {
-                    show: true,
-                    barWidth: 0.5,
-                    align: "center"
-                }
-            },
-            xaxis: {
-                mode: "categories",
-                tickLength: 0
-            }
-        });
-        /* END BAR CHART */
-    });
+        llamarGraficar();
 </script>

@@ -48,6 +48,11 @@
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>styles/admin/dist/js/app.min.js" type="text/javascript"></script>
 
+<script src="<?php echo base_url(); ?>styles/admin/plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>styles/admin/plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
+
+
+
 <?php
 /*
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
@@ -60,3 +65,172 @@
 <!-- ***************** -->
 <!-- Fin del Footer -->
 <!-- ***************** -->
+
+<script>
+    function llamarFuncionalidadTabla(){
+
+        $('#example1').dataTable({
+            "bAutoWidth": true,
+            "bPaginate": true,
+            "bLengthChange": true,
+            "bFilter": true,
+            "bSort": true,
+            "bInfo": true,
+            "oLanguage": {
+                "sLengthMenu": "_MENU_ / página",
+                "sInfo": "(_START_ a _END_) de _TOTAL_ registros",
+                    "sSearch": "Buscar:  ",
+                "oPaginate": {
+                    "sNext": "Siguiente",
+                    "sPrevious": "Atrás"
+                },
+                "sEmptyTable": "No se encontraron registros.",
+                "sZeroRecords": "No se encontraron registros.",
+                "sInfoFiltered": " - filtrando de _MAX_ registros",
+                "sInfoEmpty": "No se encontraron registros"
+            },
+            "aLengthMenu": [[5, 10, 25, 50, -1], [5, 10, 25, 50, 'Todos']],
+            "bScrollX": true,
+            "sScrollY": "200px",
+            "bScrollCollapse": true,
+            "fnDrawCallback": function() {
+                $('#example1').dataTable()._fnScrollDraw();
+                $('#example1').closest(".dataTables_scrollBody").height(200);
+            }
+        });
+
+
+
+        // Setup - add a text input to each footer cell
+        $('#example1 tfoot th').each( function () {
+            var title = $('#example1 thead th').eq( $(this).index() ).text();
+            $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+        } );
+
+        // DataTable
+        var table = $('#example1').DataTable();
+
+        // Apply the search
+        table.columns().every( function () {
+            var that = this;
+
+            $( 'input', this.footer() ).on( 'keyup change', function () {
+                that
+                    .search( this.value )
+                    .draw();
+            } );
+        } );
+    }
+    function llamarGraficar(){
+        /*FUNCION DEFINIDA POR MI*/
+        "use strict";
+        var bar_data = {
+            data: [
+                ["Enero", 1],
+                ["Febrero", 2],
+                ["Marzo", 3],
+                ["Abril", 4],
+                ["Mayo", 5],
+                ["Junio", 6]
+                //["Julio",7],
+                //["Agosto",8],
+                //["Septiembre",9],
+                //["Octubre",10],
+                //["Noviembre",11],
+                //["Diciembre",5]
+            ],
+            color: "#3c8dbc"
+        };
+        $.plot("#bar-chart", [bar_data], {
+            grid: {
+                borderWidth: 1,
+                borderColor: "#f3f3f3",
+                tickColor: "#f3f3f3"
+            },
+            series: {
+                bars: {
+                    show: true,
+                    barWidth: 0.5,
+                    align: "center"
+                }
+            },
+            xaxis: {
+                mode: "categories",
+                tickLength: 0
+            }
+        });
+        /* END BAR CHART */
+	}
+	function llamarDashboard(){
+		$.ajax({
+			url: '<?php echo base_url()."dashboard"; ?>',
+			dataType: 'html',
+			success: function (response) {
+				$('.content-wrapper').html($(response).filter(".content-wrapper").html());
+				$("#li-dashboard").attr({class: 'active'});
+				$("#li-catalogo").attr({class: ''});
+				$("#li-afilicacion").attr({class: ''});
+				$("#li-planificacion").attr({class: ''});
+				$("#li-finanzas").attr({class: ''});
+                llamarGraficar();
+			}
+		});
+	}
+	function llamarCatalogos(){
+		$.ajax({
+			url: '<?php echo base_url()."catalogos"; ?>',
+			dataType: 'html',
+			success: function (response) {
+				$('.content-wrapper').html($(response).filter(".content-wrapper").html());
+				$("#li-dashboard").attr({class: ''});
+				$("#li-catalogo").attr({class: 'active'});
+				$("#li-afilicacion").attr({class: ''});
+				$("#li-planificacion").attr({class: ''});
+				$("#li-finanzas").attr({class: ''});
+                llamarFuncionalidadTabla();
+			}
+		});
+	}
+	function llamarAfiliacion(){
+		$.ajax({
+			url: '<?php echo base_url()."afiliacion"; ?>',
+			dataType: 'html',
+			success: function (response) {
+				$('.content-wrapper').html($(response).filter(".content-wrapper").html());
+				$("#li-dashboard").attr({class: ''});
+				$("#li-catalogo").attr({class: ''});
+				$("#li-afilicacion").attr({class: 'active'});
+				$("#li-planificacion").attr({class: ''});
+				$("#li-finanzas").attr({class: ''});
+			}
+		});
+	}
+	function llamarPlanificacion(){
+		$.ajax({
+			url: '<?php echo base_url()."planificacion"; ?>',
+			dataType: 'html',
+			success: function (response) {
+				$('.content-wrapper').html($(response).filter(".content-wrapper").html());
+				$("#li-dashboard").attr({class: ''});
+				$("#li-catalogo").attr({class: ''});
+				$("#li-afilicacion").attr({class: ''});
+				$("#li-planificacion").attr({class: 'active'});
+				$("#li-finanzas").attr({class: ''});
+			}
+		});
+	}
+	function llamarFinanzas(){
+		$.ajax({
+			url: '<?php echo base_url()."finanzas"; ?>',
+			dataType: 'html',
+			success: function (response) {
+				$('.content-wrapper').html($(response).filter(".content-wrapper").html());
+				$("#li-dashboard").attr({class: 'active'});
+				$("#li-catalogo").attr({class: ''});
+				$("#li-afilicacion").attr({class: ''});
+				$("#li-planificacion").attr({class: ''});
+				$("#li-finanzas").attr({class: 'active'});
+			}
+		});
+	}
+</script>
