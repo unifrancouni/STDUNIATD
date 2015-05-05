@@ -55,6 +55,11 @@ class Visitas extends CI_Model
         $query = $this->db->query($consulta);
         $res = $query->result();
         return $res[0]->cantidad;
+        /* *** Cantidad visitas mes ***
+         *  SELECT MONTH( dFechaVisita ) , SUM( nCantidadSesionesFecha )
+            FROM stivisita
+            GROUP BY MONTH( dFechaVisita )
+         */
     }
 
 }
