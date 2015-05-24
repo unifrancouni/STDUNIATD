@@ -55,6 +55,27 @@
             return $res[0]->sDireccionImagenPerfil;
         }
 
+        //Sustituye por una foto común en caso de no tener foto de perfil
+        function obtenerImagenDefinitiva($x)
+        {
+            $imagen = $this->obtenerImagen($x);
+            if (!isset($imagen))
+            {
+                return 'user_default.jpg';
+            }
+            else
+            {
+                if(empty($imagen))
+                {
+                    return 'user_default.jpg';
+                }
+                else
+                {
+                    return $imagen;
+                }
+            }
+        }
+
         //Obtiene el nombre del usuario
         public function obtenerNombreUsuario($x)
         {
