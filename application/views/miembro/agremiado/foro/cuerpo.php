@@ -95,7 +95,7 @@
                                         Descripcion Breve
                                     </div>
                                     <div class="box-footer with-border">
-                                        <a href="#"><i class="fa fa-comment"></i> Temas (0)</a> <?php echo '   '; ?>
+                                        <a href="#" onclick="llamarTemasForo(1)"><i class="fa fa-comment"></i> Temas (0)</a> <?php echo '   '; ?>
                                         <i class="fa fa-users"></i> Participantes (0)
                                     </div>
                                 </div>
