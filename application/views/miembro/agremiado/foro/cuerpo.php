@@ -18,7 +18,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content" style="padding-bottom: 50px !important;">
+    <section class="content">
         <div class="row">
             <div class="col-lg-9">
                 <div class="box">
