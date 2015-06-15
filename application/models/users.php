@@ -88,15 +88,6 @@
             return $res[0]->sNombreUsuario;
         }
 
-        //Obtiene la cantidad de afiliados (ssgcuenta)
-        public function obtenerCantidadAfiliados()
-        {
-            $consulta = "select count(nSsgCuentaID) as cantidad from ssgcuenta";
-            $query = $this->db->query($consulta);
-            $res = $query->result();
-            return $res[0]->cantidad;
-        }
-
         //Corrige la URI antes de entrar en un controller
         public function CorregirURI()
         {
