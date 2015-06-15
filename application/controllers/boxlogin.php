@@ -28,8 +28,14 @@ class Boxlogin extends CI_Controller {
 
             $data['usuario_invalido'] = $this->session->flashdata('usuario_invalido');
             $data['usuario_mensaje'] = $this->session->flashdata('usuario_mensaje');
-            $data['profesion']=0;
+
+            //Para los combo-box (select's)
+            $data['profesion']=$this->catalogs->obtenerValoresCatalogos('06');
             $data['estado_civil']=$this->catalogs->obtenerValoresCatalogos('07');
+            $data['facultad']=$this->catalogs->obtenerValoresCatalogos('10');
+            $data['ubicacion']=$this->catalogs->obtenerValoresCatalogos('08');
+            $data['categoria']=$this->catalogs->obtenerValoresCatalogos('09');
+            $data['grado']=$this->catalogs->obtenerValoresCatalogos('11');
 
 
 			$this->load->view('invitado/login', $data);
