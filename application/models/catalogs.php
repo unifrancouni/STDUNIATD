@@ -23,4 +23,15 @@ class Catalogs extends CI_Model
         return $res[0]->cantidad;
     }
 
+    public function obtenerValoresCatalogos($cod_catalogo)
+    {
+        $consulta = "select vc.nStbValorCatalogoID, vc.sDescripcion from stbcatalogo as c
+                      inner join stbvalorcatalogo as vc on vc.nStbCatalogoID=c.nStbCatalogoID
+                      where c.sCodigoInterno=$cod_catalogo";
+
+        $query = $this->db->query($consulta);
+        $res = $query->result();
+        return $res;
+    }
+
 }

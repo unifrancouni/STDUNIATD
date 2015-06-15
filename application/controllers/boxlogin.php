@@ -6,6 +6,7 @@ class Boxlogin extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('users');
+        $this->load->model('catalogs');
 		$this->load->library('Session');
 	}
 
@@ -27,6 +28,9 @@ class Boxlogin extends CI_Controller {
 
             $data['usuario_invalido'] = $this->session->flashdata('usuario_invalido');
             $data['usuario_mensaje'] = $this->session->flashdata('usuario_mensaje');
+            $data['profesion']=0;
+            $data['estado_civil']=$this->catalogs->obtenerValoresCatalogos('07');
+
 
 			$this->load->view('invitado/login', $data);
 
