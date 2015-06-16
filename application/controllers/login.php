@@ -22,7 +22,6 @@ class Login extends CI_Controller {
 
 	public function user()
 	{
-        $data = array();
 
 		$this->load->library('form_validation');
 		
