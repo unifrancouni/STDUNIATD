@@ -38,42 +38,84 @@ class Afiliation extends CI_Model
                                               $facultad, $ubicacion, $categoria, $grado, $nomina_uni,
                                               $fecha_ingreso, $observaciones)
     {
-        //Insertamos persona
-        $consulta = "insert into stbpersona values (NULL, '$nombre', '$apellido1', '$apellido2', '$cedula', NULL, NULL, NULL, NOW(), NULL, NULL)";
+        //Revisar que persona con misma cedula no exista
+        $consulta = "select nStbPersonaID from stbpersona where sCedula='$cedula'";
         $query = $this->db->query($consulta);
+        $res = $query->num_rows();
+        if ($res=0){
+            //Insertamos persona
+            $consulta = "insert into stbpersona values (NULL, '$nombre', '$apellido1', '$apellido2', '$cedula', NULL, NULL, NULL, DATE(NOW()), NULL, NULL)";
+            $query = $this->db->query($consulta);
+            //Obtenemos el id de la persona recien-ingresada
+            $consulta = "select nStbPersonaID from stbpersona where sCedula='$cedula'";
+            $query = $this->db->query($consulta);
+            $res = $query->result();
+            $id_persona=$res[0]->nStbPersonaID;
+        }
+        else{
+            //Revisamos que la persona no tenga solicitudes de ningun tipo
+            $consulta = "select nScaAfiliacionID from scaafiliacion a inner join stbpersona p on a.nStbPersonaID=p.nStbPersonaID
+                      where p.sCedula='$cedula'";
+            $query = $this->db->query($consulta);
+            $res = $query->num_rows();
+            $bueno=0;
+            if($res=0)
+            {
+                $bueno=1;
+            }
+            else
+            {
+                //La mas reciente solicitud debe ser unicamente
+                $consulta = "select nScaAfiliacionID, MAX(dFechaCreacion) from scaafiliacion a inner join stbpersona p on a.nStbPersonaID=p.nStbPersonaID
+                      where p.sCedula='$cedula' ";
+                $query = $this->db->query($consulta);
+
+                //Si ha hecho solicitudes, solo se permiten rechazado e inactivo para volver a solicitar
+                $consulta = "select nScaAfiliacionID from scaafiliacion a inner join stbpersona p on a.nStbPersonaID=p.nStbPersonaID
+                      inner join stbvalorcatalogo vc on a.nStbEstadoAfiliacionID=vc.nStbValorCatalogoID
+                      inner join stbcatalogo c on vc.nStbCatalogoID=c.nStbCatalogoID
+                      where c.sCodigoInterno='05' and vc.sCodigoInterno<>'02' and vc.sCodigoInterno<>'05'
+                      and p.sCedula='$cedula'";
+                $query = $this->db->query($consulta);
+                $res = $query->result();
+            }
+
+        }
+
         //Obtenemos el id de la persona recien-ingresada
         $consulta = "select nStbPersonaID from stbpersona where sCedula='$cedula'";
         $query = $this->db->query($consulta);
         $res = $query->result();
         $id_persona=$res[0]->nStbPersonaID;
+
         //Ingresamos Afiliacion
         $consulta = "insert into scaafiliacion
                       values (NULL, $id_persona, $profesion, $estado_civil, $inss, '$direccion', $facultad,
-                      $ubicacion, $categoria, $grado, $nomina_uni, $fecha_ingreso, '$observaciones', 5, NOW())";
+                      $ubicacion, $categoria, $grado, $nomina_uni, $fecha_ingreso, '$observaciones', 5, DATE(NOW()))";
         $query = $this->db->query($consulta);
         //Ingresamos los contactos de dicha persona
         if($tel!=null and $tel!=""){
-            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 18, '$tel', NULL, NOW(), NULL, NULL)";
+            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 18, '$tel', NULL, DATE(NOW()), NULL, NULL)";
             $query = $this->db->query($consulta);
         }
         if($celular!=null and $celular!=""){
-            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 19, '$celular', NULL, NOW(), NULL, NULL)";
+            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 19, '$celular', NULL, DATE(NOW()), NULL, NULL)";
             $query = $this->db->query($consulta);
         }
         if($tel_uni!=null and $tel_uni!=""){
-            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 20, '$tel_uni', NULL, NOW(), NULL, NULL)";
+            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 20, '$tel_uni', NULL, DATE(NOW()), NULL, NULL)";
             $query = $this->db->query($consulta);
         }
         if($ext!=null and $ext!=""){
-            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 21, '$ext', NULL, NOW(), NULL, NULL)";
+            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 21, '$ext', NULL, DATE(NOW()), NULL, NULL)";
             $query = $this->db->query($consulta);
         }
         if($email1!=null and $email1!=""){
-            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 2, '$email1', NULL, NOW(), NULL, NULL)";
+            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 2, '$email1', NULL, DATE(NOW()), NULL, NULL)";
             $query = $this->db->query($consulta);
         }
         if($email2!=null and $email2!=""){
-            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 2, '$email2', NULL, NOW(), NULL, NULL)";
+            $consulta = "insert into stbcontactopersona values (NULL, $id_persona, 2, '$email2', NULL, DATE(NOW()), NULL, NULL)";
             $query = $this->db->query($consulta);
         }
     }
