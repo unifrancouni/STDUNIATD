@@ -15,10 +15,16 @@ class Boxlogin extends CI_Controller {
         $this->users->CorregirURI();
 
         $existe=$this->session->flashdata('usuario_invalido');
-        if(!isset($existe))
+        if(!isset($existe)) //Setear variable la primera vez
         {
             $this->session->set_flashdata('usuario_invalido',0);
             $this->session->set_flashdata('usuario_mensaje','');
+        }
+
+        $existe=$this->session->flashdata('solicitud_enviada');
+        if(!isset($existe)) //Setear variable la primera vez
+        {
+            $this->session->set_flashdata('solicitud_enviada',0);
         }
 
 
@@ -28,6 +34,7 @@ class Boxlogin extends CI_Controller {
 
             $data['usuario_invalido'] = $this->session->flashdata('usuario_invalido');
             $data['usuario_mensaje'] = $this->session->flashdata('usuario_mensaje');
+            $data['solicitud_enviada'] = $this->session->flashdata('solicitud_enviada');
 
             //Para los combo-box (select's)
             $data['profesion']=$this->catalogs->obtenerValoresCatalogos('06');

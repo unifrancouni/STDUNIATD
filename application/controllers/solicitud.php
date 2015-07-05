@@ -32,8 +32,8 @@ class Solicitud extends CI_Controller
         $this->form_validation->set_rules('ubicacion', 'Ubicacion', 'required');
         $this->form_validation->set_rules('categoria', 'Categoria', 'required');
         $this->form_validation->set_rules('grado', 'Grado', 'required');
-        $this->form_validation->set_rules('nomina_uni', 'Password', 'required');
-        $this->form_validation->set_rules('fecha_ingreso', 'Password', 'required');
+        $this->form_validation->set_rules('nomina_uni', 'Nomina', 'required');
+        $this->form_validation->set_rules('fecha_ingreso', 'Fecha Ingreso', 'required');
         //$this->form_validation->set_rules('observaciones', 'Password', 'required');
 
 
@@ -76,6 +76,7 @@ class Solicitud extends CI_Controller
             $this->afiliation->grabarSolicitudAfiliacion($nombre, $apellido1, $apellido2, $cedula,
                 $profesion, $estado_civil, $inss, $direccion, $tel, $celular, $tel_uni, $ext, $email1, $email2,
                 $facultad, $ubicacion, $categoria, $grado, $nomina_uni, $fecha_ingreso, $observaciones);
+            $this->session->set_flashdata('usuario_invalido',0);
             $this->session->set_flashdata('solicitud_enviada',1);
             $this->session->set_flashdata('usuario_mensaje','La solicitud se ha enviado con éxito.');
             redirect(base_url().'boxlogin');
