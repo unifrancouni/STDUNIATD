@@ -9,6 +9,8 @@ class Solicitud extends CI_Controller
         $this->load->model('users');
         $this->load->model('afiliation');
         $this->load->library('Session');
+        $this->load->model('notifications');
+        $this->load->model('catalogs');
     }
 
     public function solicitar()
@@ -76,6 +78,14 @@ class Solicitud extends CI_Controller
             $this->afiliation->grabarSolicitudAfiliacion($nombre, $apellido1, $apellido2, $cedula,
                 $profesion, $estado_civil, $inss, $direccion, $tel, $celular, $tel_uni, $ext, $email1, $email2,
                 $facultad, $ubicacion, $categoria, $grado, $nomina_uni, $fecha_ingreso, $observaciones);
+
+            $idTipoNotificacion = $this->catalogs->obtenerValorCatalogoID('TipoNotificacion', '01');
+
+            $descripcion = "Solicitud de afilicación (".$nombre." ".$apellido1.")";
+            $idAfiliacion=$this->afiliation->obtenerAfiliacionID($cedula);
+
+            $this->notifications->grabarNotificacion($idTipoNotificacion, $descripcion, $idAfiliacion);
+
             $this->session->set_flashdata('usuario_invalido',0);
             $this->session->set_flashdata('solicitud_enviada',1);
             $this->session->set_flashdata('usuario_mensaje','La solicitud se ha enviado con éxito.');

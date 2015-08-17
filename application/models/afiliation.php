@@ -7,6 +7,12 @@ class Afiliation extends CI_Model
         parent::__construct();
     }
 
+    //Confirmar y/o Rechazar una solicitud
+    public function setEstadoAfiliacion($idAfiliacion, $estadoID)
+    {
+        $this->db->query("update scaafiliacion set nStbEstadoAfiliacionID=$estadoID where nScaAfiliacionID=$idAfiliacion");
+    }
+
     //Obtener Afiliados
     public function getAfiliados()
     {
@@ -32,6 +38,17 @@ class Afiliation extends CI_Model
         return $res[0]->cantidad;
     }
 
+    //Obtener el ID de una afilicaión dada la cédula de la persona
+    public function obtenerAfiliacionID($cedula)
+    {
+        $consulta = "SELECT A.nScaAfiliacionID FROM scaafiliacion A inner join
+                      stbpersona P on P.nStbPersonaID=A.nStbPersonaID
+                      where P.sCedula='$cedula'";
+        $query = $this->db->query($consulta);
+        $res = $query->result();
+        return $res[0]->nScaAfiliacionID;
+    }
+
     public function grabarSolicitudAfiliacion($nombre, $apellido1, $apellido2, $cedula,
                                               $profesion, $estado_civil, $inss, $direccion,
                                               $tel, $celular, $tel_uni, $ext, $email1, $email2,
@@ -42,7 +59,7 @@ class Afiliation extends CI_Model
         $consulta = "select nStbPersonaID from stbpersona where sCedula='$cedula'";
         $query = $this->db->query($consulta);
         $res = $query->num_rows();
-        if ($res=0){
+        if ($res==0){
             //Insertamos persona
             $consulta = "insert into stbpersona values (NULL, '$nombre', '$apellido1', '$apellido2', '$cedula', NULL, NULL, NULL, DATE(NOW()), NULL, NULL)";
             $query = $this->db->query($consulta);
@@ -66,7 +83,7 @@ class Afiliation extends CI_Model
             else
             {
                 //La mas reciente solicitud debe ser unicamente
-                $consulta = "select nScaAfiliacionID, MAX(dFechaCreacion) from scaafiliacion a inner join stbpersona p on a.nStbPersonaID=p.nStbPersonaID
+                $consulta = "select nScaAfiliacionID, MAX(a.dFechaCreacion) from scaafiliacion a inner join stbpersona p on a.nStbPersonaID=p.nStbPersonaID
                       where p.sCedula='$cedula' ";
                 $query = $this->db->query($consulta);
 

@@ -25,6 +25,15 @@
 				return FALSE;
 		}
 
+        //Obtener el ID de un usuario X
+        public function obtenerIdUsuario($x)
+        {
+            $query = $this->db->query("SELECT U.nSsgUsuarioID FROM ssgusuario U inner join ssgcuenta C on C.nSsgCuentaID=U.nSsgCuentaID
+                                      WHERE C.sNombreUsuario='$x'");
+            $res = $query->result();
+            return $res[0]->nSsgUsuarioID;
+        }
+
 		//Obtener Password del usuario X
 		public function obtenerPassword($x)
 		{

@@ -17,7 +17,7 @@ class Catalogs extends CI_Model
     //Obtener cantidad de catalogos
     public function  obtenerCantidadCatalogos()
     {
-        $consulta = "select count(nStbCatalogoID) as cantidad from stbcatalogo";
+        $consulta = "select count(nStbCatalogoID) as cantidad from stbcatalogo where nActivo=1";
         $query = $this->db->query($consulta);
         $res = $query->result();
         return $res[0]->cantidad;
@@ -32,6 +32,33 @@ class Catalogs extends CI_Model
         $query = $this->db->query($consulta);
         $res = $query->result();
         return $res;
+    }
+
+    public function obtenerValorCatalogoID($nombre_catalogo, $codigo_valor)
+    {
+        $consulta = "SELECT V.nStbValorCatalogoID FROM stbcatalogo C inner join stbvalorcatalogo V on V.nStbCatalogoID=C.nStbCatalogoID
+                      where C.sDescripcion='$nombre_catalogo' and
+                      V.sCodigoInterno='$codigo_valor'";
+        $query = $this->db->query($consulta);
+        $res = $query->result();
+        return $res[0]->nStbValorCatalogoID;
+    }
+
+    public function agregarCatalogo($cod, $descripcion, $usuarioID)
+    {
+        $consulta = "insert into stbcatalogo
+                      (sCodigoInterno, sDescripcion, nActivo, nUsuarioCreacionID, dFechaCreacion, nUsuarioModificacionID, dFechaModificacion)
+                      values
+                      ('$cod','$descripcion',1,$usuarioID,NOW(),NULL,NULL)";
+        $this->db->query($consulta);
+    }
+
+    public function obtenerCodigoSiguiente()
+    {
+        $consulta = "select MAX(sCodigoInterno)+1 nextCode from stbcatalogo";
+        $query = $this->db->query($consulta);
+        $res = $query->result();
+        return $res[0]->nextCode;
     }
 
 }
