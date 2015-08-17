@@ -14,6 +14,14 @@ class Catalogs extends CI_Model
         return $query->result();
     }
 
+
+    public function getValoresCatalogos($catalogoID)
+    {
+        $query = $this->db->query("select * from stbvalorcatalogo WHERE nStbCatalogoID=$catalogoID");
+        return $query->result();
+    }
+
+
     //Obtener cantidad de catalogos
     public function  obtenerCantidadCatalogos()
     {
@@ -53,9 +61,35 @@ class Catalogs extends CI_Model
         $this->db->query($consulta);
     }
 
+    public function editarCatalogo($catalogoID, $cod, $descripcion, $activo, $usuarioID)
+    {
+        $consulta = "update stbcatalogo set
+                      sCodigoInterno='$cod',
+                      sDescripcion='$descripcion',
+                      nActivo=$activo,
+                      nUsuarioModificacionID=$usuarioID,
+                      dFechaModificacion=NOW()
+                      where nStbCatalogoID=$catalogoID";
+        $this->db->query($consulta);
+    }
+
+    public function eliminarCatalogo($catalogoID)
+    {
+        $consulta = "delete from stbcatalogo where nStbCatalogoID=$catalogoID";
+        $this->db->query($consulta);
+    }
+
     public function obtenerCodigoSiguiente()
     {
         $consulta = "select MAX(sCodigoInterno)+1 nextCode from stbcatalogo";
+        $query = $this->db->query($consulta);
+        $res = $query->result();
+        return $res[0]->nextCode;
+    }
+
+    public function obtenerCodigoSiguienteVC($catalogoID)
+    {
+        $consulta = "select MAX(sCodigoInterno)+1 nextCode from stbvalorcatalogo where nStbCatalogoID=$catalogoID";
         $query = $this->db->query($consulta);
         $res = $query->result();
         return $res[0]->nextCode;

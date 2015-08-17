@@ -6,13 +6,13 @@
 
 <script>
 
-    llamarFuncionalidadTabla("#c");
+    llamarFuncionalidadTabla("#vc");
 
-    $('#editarCatalogo').on('show.bs.modal', function (event) {
+    $('#editarValorCatalogo').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var code = button.data('codigo') // Extract info from data-* attributes
         var description = button.data('descripcion')
-        var title = 'Editar Catálogo: '+description
+        var title = 'Editar valor: '+description
         var catalogoID = button.data('catalogoid')
 
         var modal = $(this)
