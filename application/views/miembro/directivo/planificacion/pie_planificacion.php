@@ -161,4 +161,6 @@
             $("#new-event").val("");
         });
     }
+
+    llamarCalendario()
 </script>

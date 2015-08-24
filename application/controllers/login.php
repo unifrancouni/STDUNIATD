@@ -43,6 +43,12 @@ class Login extends CI_Controller {
 		}
 		else
 		{
+            if (!preg_match('/^([0-9]{13}[A-Za-z]{1})$/i',$usuario))
+            {
+                $this->session->set_flashdata('usuario_invalido',1);
+                $this->session->set_flashdata('usuario_mensaje','Formato de usuario inválido.');
+                redirect(base_url().'boxlogin');
+            }
 			if($this->validarUser($usuario, $passwd))
 			{
 				$newdata = array(

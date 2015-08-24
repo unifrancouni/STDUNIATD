@@ -9,6 +9,11 @@ class Temas_foro extends CI_Controller
     {
         parent::__construct();
         $this->load->model('users');
+        $this->load->model('afiliation');
+        $this->load->model('news');
+        $this->load->model('visitas');
+        $this->load->model('catalogs');
+        $this->load->model('notifications');
         $this->load->library('Session');
     }
 
@@ -25,17 +30,17 @@ class Temas_foro extends CI_Controller
             $nivel_cargo=$this->users->obtenerNivelCargo($s);
             if($nivel_cargo==1)
             {
-                //$data['cant_afiliados']=$this->users->obtenerCantidadAfiliados();
-                //$data['cant_noticias']=$this->news->obtenerCantidadNoticias();
-                //$data['cant_visitas']=$this->visitas->obtenerCantidadVisitasHoy();
+                $data['cant_afiliados']=$this->users->obtenerCantidadAfiliados();
+                $data['cant_noticias']=$this->news->obtenerCantidadNoticias();
+                $data['cant_visitas']=$this->visitas->obtenerCantidadVisitasHoy();
 
-                //$this->load->view('miembro/agremiado/generales/head', $data);
-                //$this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
-                //$this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
+                $this->load->view('miembro/agremiado/generales/head', $data);
+                $this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
+                $this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
                 $this->load->view('miembro/agremiado/foro/temas_foro_cuerpo', $data);
-                //$this->load->view('miembro/agremiado/generales/pie', $data);
-                //$this->load->view('miembro/directivo/dashboard/pie_dashboard', $data);
-                //$this->load->view('miembro/agremiado/generales/final', $data);
+                $this->load->view('miembro/agremiado/generales/pie', $data);
+                $this->load->view('miembro/directivo/dashboard/pie_dashboard', $data);
+                $this->load->view('miembro/agremiado/generales/final', $data);
             }
             else
             {

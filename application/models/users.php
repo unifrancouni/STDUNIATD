@@ -97,7 +97,7 @@
             return $res[0]->sNombreUsuario;
         }
 
-        //Corrige la URI antes de entrar en un controller
+        //Corrige la URI antes de entrar en un controller (URL's Amigables)
         public function CorregirURI()
         {
             $count=0;

@@ -65,8 +65,6 @@ class Solicitud extends CI_Controller
         //$usuario = $_POST['email'];
         //$passwd = $_POST['password'];
 
-
-
         if ($this->form_validation->run() === FALSE)
         {
             $this->session->set_flashdata('usuario_invalido',1);
@@ -88,7 +86,7 @@ class Solicitud extends CI_Controller
 
             $this->session->set_flashdata('usuario_invalido',0);
             $this->session->set_flashdata('solicitud_enviada',1);
-            $this->session->set_flashdata('usuario_mensaje','La solicitud se ha enviado con éxito.');
+            $this->session->set_flashdata('usuario_mensaje','La solicitud se ha enviado con éxito.'.$hoy);
             redirect(base_url().'boxlogin');
         }
     }

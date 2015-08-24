@@ -79,6 +79,33 @@ class Catalogs extends CI_Model
         $this->db->query($consulta);
     }
 
+    public function agregarValorCatalogo($catalogoID, $cod, $descripcion, $usuarioID)
+    {
+        $consulta = "insert into stbvalorcatalogo
+                      (nStbCatalogoID, sCodigoInterno, sDescripcion, nActivo, nUsuarioCreacionID, dFechaCreacion, nUsuarioModificacionID, dFechaModificacion)
+                      values
+                      ($catalogoID,'$cod','$descripcion',1,$usuarioID,NOW(),NULL,NULL)";
+        $this->db->query($consulta);
+    }
+
+    public function editarValorCatalogo($valorCatalogoID, $cod, $descripcion, $activo, $usuarioID)
+    {
+        $consulta = "update stbvalorcatalogo set
+                      sCodigoInterno='$cod',
+                      sDescripcion='$descripcion',
+                      nActivo=$activo,
+                      nUsuarioModificacionID=$usuarioID,
+                      dFechaModificacion=NOW()
+                      where nStbValorCatalogoID=$valorCatalogoID";
+        $this->db->query($consulta);
+    }
+
+    public function eliminarValorCatalogo($valorCatalogoID)
+    {
+        $consulta = "delete from stbvalorcatalogo where nStbValorCatalogoID=$valorCatalogoID";
+        $this->db->query($consulta);
+    }
+
     public function obtenerCodigoSiguiente()
     {
         $consulta = "select MAX(sCodigoInterno)+1 nextCode from stbcatalogo";

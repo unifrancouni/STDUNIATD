@@ -7,6 +7,11 @@ class Planificacion extends CI_Controller
     {
         parent::__construct();
         $this->load->model('users');
+        $this->load->model('afiliation');
+        $this->load->model('news');
+        $this->load->model('visitas');
+        $this->load->model('catalogs');
+        $this->load->model('notifications');
         $this->load->library('Session');
     }
 
@@ -27,13 +32,18 @@ class Planificacion extends CI_Controller
                 //$data['cant_noticias']=$this->news->obtenerCantidadNoticias();
                 //$data['cant_visitas']=$this->visitas->obtenerCantidadVisitasHoy();
 
-                //$this->load->view('miembro/agremiado/generales/head', $data);
-                //$this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
-                //$this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
+                $data['next_code']=$this->catalogs->obtenerCodigoSiguiente();
+
+                $data['cant_notificaciones']=$this->notifications->obtenerCantidadNotificaciones();
+                $data['notificaciones']=$this->notifications->verNotificaciones();
+
+                $this->load->view('miembro/agremiado/generales/head', $data);
+                $this->load->view('miembro/agremiado/generales/cabecera_azul', $data);
+                $this->load->view('miembro/agremiado/generales/panel_izquierdo', $data);
                 $this->load->view('miembro/directivo/planificacion/cuerpo', $data);
-                //$this->load->view('miembro/agremiado/generales/pie', $data);
-                //$this->load->view('miembro/directivo/dashboard/pie_dashboard', $data);
-                //$this->load->view('miembro/agremiado/generales/final', $data);
+                $this->load->view('miembro/agremiado/generales/pie', $data);
+                $this->load->view('miembro/directivo/planificacion/pie_planificacion', $data);
+                $this->load->view('miembro/agremiado/generales/final', $data);
             }
             else
             {
