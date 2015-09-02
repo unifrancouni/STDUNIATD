@@ -5,4 +5,4 @@ Sistema del sindicato Bayardo Larios Palacios UNI
 
 Integrantes:
 Franco Antonio Ugarte
-María Esther Granados
+
