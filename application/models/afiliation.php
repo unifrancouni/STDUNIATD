@@ -26,7 +26,7 @@ class Afiliation extends CI_Model
         $consulta = "select count(*) as cantidad from scaafiliacion where nstbestadoafiliacionid=7";
         $query = $this->db->query($consulta);
         $res = $query->result();
-        return $res[0]->cantidad;
+        return $res[0]->cantidad+1;
     }
 
     //Obtener cantidad de Solicitudes
