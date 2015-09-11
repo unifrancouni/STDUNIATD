@@ -161,12 +161,12 @@
                             <!-- Message to the right -->
                             <div class="direct-chat-msg right">
                                 <div class="direct-chat-info clearfix">
-                                    <span class="direct-chat-name pull-right">María Esther</span>
+                                    <span class="direct-chat-name pull-right">Marï¿½a Esther</span>
                                     <span class="direct-chat-timestamp pull-left">23 Jan 2:05 pm</span>
                                 </div><!-- /.direct-chat-info -->
                                 <img class="direct-chat-img" src="<?php echo base_url(); ?>/images/images_perfil/<?php echo $imagen; ?>" alt="message user image"><!-- /.direct-chat-img -->
                                 <div class="direct-chat-text">
-                                    Hola! como estás?
+                                    Hola! como estï¿½s?
                                 </div><!-- /.direct-chat-text -->
                             </div><!-- /.direct-chat-msg -->
 
@@ -178,19 +178,19 @@
                                 </div><!-- /.direct-chat-info -->
                                 <img class="direct-chat-img" src="<?php echo base_url(); ?>/images/images_perfil/<?php echo $imagen; ?>" alt="message user image"><!-- /.direct-chat-img -->
                                 <div class="direct-chat-text">
-                                    Muy bién y vos? Qué tal?
+                                    Muy biï¿½n y vos? Quï¿½ tal?
                                 </div><!-- /.direct-chat-text -->
                             </div><!-- /.direct-chat-msg -->
 
                             <!-- Message to the right -->
                             <div class="direct-chat-msg right">
                                 <div class="direct-chat-info clearfix">
-                                    <span class="direct-chat-name pull-right">María Esther</span>
+                                    <span class="direct-chat-name pull-right">Marï¿½a Esther</span>
                                     <span class="direct-chat-timestamp pull-left">23 Jan 6:10 pm</span>
                                 </div><!-- /.direct-chat-info -->
                                 <img class="direct-chat-img" src="<?php echo base_url(); ?>/images/images_perfil/<?php echo $imagen; ?>" alt="message user image"><!-- /.direct-chat-img -->
                                 <div class="direct-chat-text">
-                                    Pues acá, pasándola..
+                                    Pues acï¿½, pasï¿½ndola..
                                 </div><!-- /.direct-chat-text -->
                             </div><!-- /.direct-chat-msg -->
 
@@ -208,7 +208,7 @@
                                   Franco Ugarte
                                   <small class="contacts-list-date pull-right">2/28/2015</small>
                                 </span>
-                                            <span class="contacts-list-msg">Aquí el último msj...</span>
+                                            <span class="contacts-list-msg">Aquï¿½ el ï¿½ltimo msj...</span>
                                         </div><!-- /.contacts-list-info -->
                                     </a>
                                 </li><!-- End Contact Item -->
@@ -217,10 +217,10 @@
                                         <img class="contacts-list-img" src="<?php echo base_url(); ?>/images/images_perfil/<?php echo $imagen; ?>">
                                         <div class="contacts-list-info">
                                 <span class="contacts-list-name">
-                                  María Esther
+                                  Marï¿½a Esther
                                   <small class="contacts-list-date pull-right">2/23/2015</small>
                                 </span>
-                                            <span class="contacts-list-msg">Aquí el último msj...</span>
+                                            <span class="contacts-list-msg">Aquï¿½ el ï¿½ltimo msj...</span>
                                         </div><!-- /.contacts-list-info -->
                                     </a>
                                 </li><!-- End Contact Item -->
@@ -229,10 +229,10 @@
                                         <img class="contacts-list-img" src="<?php echo base_url(); ?>/images/images_perfil/<?php echo $imagen; ?>">
                                         <div class="contacts-list-info">
                                 <span class="contacts-list-name">
-                                  Dayton Martínez
+                                  Dayton Martï¿½nez
                                   <small class="contacts-list-date pull-right">2/20/2015</small>
                                 </span>
-                                            <span class="contacts-list-msg">Aquí el último msj...</span>
+                                            <span class="contacts-list-msg">Aquï¿½ el ï¿½ltimo msj...</span>
                                         </div><!-- /.contacts-list-info -->
                                     </a>
                                 </li><!-- End Contact Item -->
@@ -241,10 +241,10 @@
                                         <img class="contacts-list-img" src="<?php echo base_url(); ?>/images/images_perfil/<?php echo $imagen; ?>">
                                         <div class="contacts-list-info">
                                 <span class="contacts-list-name">
-                                  Salomón Delgado
+                                  Salomï¿½n Delgado
                                   <small class="contacts-list-date pull-right">2/10/2015</small>
                                 </span>
-                                            <span class="contacts-list-msg">Aquí el último msj...</span>
+                                            <span class="contacts-list-msg">Aquï¿½ el ï¿½ltimo msj...</span>
                                         </div><!-- /.contacts-list-info -->
                                     </a>
                                 </li><!-- End Contact Item -->
@@ -253,10 +253,10 @@
                                         <img class="contacts-list-img" src="<?php echo base_url(); ?>/images/images_perfil/<?php echo $imagen; ?>">
                                         <div class="contacts-list-info">
                                 <span class="contacts-list-name">
-                                  Reyna Rodríguez
+                                  Reyna Rodrï¿½guez
                                   <small class="contacts-list-date pull-right">1/27/2015</small>
                                 </span>
-                                            <span class="contacts-list-msg">Aquí el último msj...</span>
+                                            <span class="contacts-list-msg">Aquï¿½ el ï¿½ltimo msj...</span>
                                         </div><!-- /.contacts-list-info -->
                                     </a>
                                 </li><!-- End Contact Item -->
@@ -268,7 +268,7 @@
                                   Guisell Matute
                                   <small class="contacts-list-date pull-right">1/4/2015</small>
                                 </span>
-                                            <span class="contacts-list-msg">Aquí el último msj...</span>
+                                            <span class="contacts-list-msg">AquÃ­ el ï¿½ltimo msj...</span>
                                         </div><!-- /.contacts-list-info -->
                                     </a>
                                 </li><!-- End Contact Item -->
@@ -277,7 +277,7 @@
                     </div><!-- /.box-body -->
                     <div class="box-footer">
                         <form action="#" method="post">
-                            <div class="input-group">
+                            <div class="input-GROUP">
                                 <input type="text" name="message" placeholder="Responder..." class="form-control">
                                 <span class="input-group-btn">
                                     <button type="button" class="btn btn-warning btn-flat">Enviar</button>
